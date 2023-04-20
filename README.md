@@ -1,1 +1,1 @@
-# countdown_python
+Countdown timer in python.
