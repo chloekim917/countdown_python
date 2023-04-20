@@ -24,7 +24,7 @@ def countdown(t):
         minInt, secInt = divmod(minInt, 60)
         timer = '{:02d}:{:02d}:{:02d}'.format(hrInt, minInt, secInt)
         print(timer, end="\r")
-        time.sleep(0.001)
+        time.sleep(1)
         t -= 1
     print("Bzzt! Bzzt! Time's up!")
 
