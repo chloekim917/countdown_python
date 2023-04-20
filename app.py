@@ -3,43 +3,19 @@ hrInt = int(hr)
 minInt = int(min)
 secInt = int(sec)
 userInput = '{:02}:{:02}:{:02}'.format(hrInt, minInt, secInt)
-print(userInput)
-t = (minInt*60)+secInt
-print (t)
+print(f"The timer is set for: {hr} hours {min} minutes and {sec} seconds")
+t = (hrInt*3600)+(minInt*60)+secInt
+
 
 import time
 def countdown(t):
     while t: 
-        minInt, secInt = divmod(t, 60)
-        timer = '{:02d}:{:02d}'.format(minInt, secInt)
+        hrInt, minInt =divmod(t, 3600)
+        minInt, secInt = divmod(minInt, 60)
+        timer = '{:02d}:{:02d}:{:02d}'.format(hrInt, minInt, secInt)
         print(timer, end="\r")
         time.sleep(1)
         t -= 1
     print("Bzzt! Bzzt! Time's up!")
 
 countdown(t)
-
-
-"""
-# import the time module
-import time
-  
-# define the countdown func.
-def countdown(t):
-    
-    while t:
-        mins, secs = divmod(t, 60)
-        timer = '{:02d}:{:02d}'.format(mins, secs)
-        print(timer, end="\r")
-        time.sleep(1)
-        t -= 1
-      
-    print('Fire in the hole!!')
-  
-  
-# input time in seconds
-t = input("Enter the time in seconds: ")
-  
-# function call
-countdown(int(t))
-"""
